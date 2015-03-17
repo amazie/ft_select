@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/17 15:55:51 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/17 16:01:45 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		main(int argc, char **argv)
 			i++;
 		}
 	}
-	ft_putchar('\n');
+	else
+		ft_putchar('\n');
 	return (0);
 }
