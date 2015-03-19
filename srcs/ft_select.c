@@ -12,20 +12,39 @@
 
 #include "ft_select.h"
 
-int		main(int argc, char **argv)
+int		ft_test_select(void)
 {
-	int i;
+	char buffer[3];
 
-	i = 1;
-	if (argc >= 2)
+	while(42)
 	{
-		while (argv[i])
+		read(0, buffer, 3);
+		if (buffer[0] == 27)
+			ft_putstr("It's ALIIIIIIVE\n");
+		else if (buffer[0] == 4)
 		{
-			ft_putendl(argv[i]);
-			i++;
+			ft_putstr("ole\n");
+			return (0);
 		}
 	}
-	else
-		ft_putchar('\n');
 	return (0);
+}
+
+int		main(int argc, char **argv)
+{
+	t_all	all;
+
+	(void)argc;
+	(void)argv;
+	if ((all.name_term = getenv("TERM")) == NULL)
+		return (-1);
+	if (tgetent(NULL, all.name_term) == -1)
+		return (-1);
+	ft_test_select();
+  // remplis la structure termios des possibilités du terminal.
+	if (!ft_init_termios(&all))
+		return (-1);
+	if (tcgetattr(0, (&all.term)) == -1)
+		return (-1);
+	return (ft_end_termios(&all));
 }

@@ -6,7 +6,7 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/17 15:41:40 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/19 18:14:22 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,11 +14,11 @@ NAME 		= ft_select
 
 DEBUG 		= no
 ifeq ($(DEBUG),no)
-    FLAGS	=-Wall -Werror -Wextra
+    FLAGS	=-Wall -Werror -Wextra -ltermcap
 else
     FLAGS	=-g
 endif
-SRC 		= ft_select.c
+SRC 		= ft_select.c ft_term_change.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h
