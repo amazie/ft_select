@@ -78,8 +78,6 @@ void	ft_arg_to_list(char **argv, t_all *all)
 		ft_push_list(all, tmp);
 		i++;
 	}
-	// if (all->lst == NULL)
-	// 	all->lst = lst;
 	pr = all->lst;
 	while (pr->next != all->lst)
 	{
