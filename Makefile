@@ -6,19 +6,19 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/20 13:45:40 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/20 17:15:46 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME 		= ft_select
 
-DEBUG 		= no
+DEBUG 		= yes
 ifeq ($(DEBUG),no)
     FLAGS	=-Wall -Werror -Wextra -ltermcap
 else
     FLAGS	=-g -ltermcap
 endif
-SRC 		= ft_select.c ft_term_change.c
+SRC 		= ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c ft_list.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h

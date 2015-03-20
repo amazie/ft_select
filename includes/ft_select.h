@@ -34,13 +34,14 @@ typedef enum	s_enum
 	RIGHT_KEY = 1480809243,
 	UP_KEY = 1480678171,
 	DOWN_KEY = 1480743707,
-	ESC_KEY = UNKNOWN,
+	ESC_KEY = 27,
 	SPACE_KEY = 1469045280,
 }				t_enum;
 
 typedef struct	s_all
 {
 	char	*name_term;
+	t_lst	*lst;
 }				t_all;
 
 // struct termios {
@@ -58,5 +59,21 @@ typedef struct	s_all
 */
 int		ft_init_termios(struct termios *term, t_all *all);
 int		ft_end_termios(struct termios *term);
+/*
+**	ft_print_select.c
+*/
+void	ft_print_select(char *str);
+/*
+**	ft_myputchar.c
+*/
+int		ft_myputchar(int c);
+/*
+**	ft_select.c
+*/
+int		ft_brain_select(char **argv, t_all *all);
+/*
+**	ft_list.c
+*/
+void	ft_arg_to_list(char **argv, t_all *all);
 
 #endif
