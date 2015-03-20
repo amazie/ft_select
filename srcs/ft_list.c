@@ -28,6 +28,10 @@ t_lst	*ft_init_lst(void)
 	return (tmp);
 }
 
+/*
+**	This function create a new link to the linked list, 
+**	and put the string into the list.
+*/
 t_lst	*ft_fill_list(char *str)
 {
 	t_lst	*tmp;
@@ -37,6 +41,9 @@ t_lst	*ft_fill_list(char *str)
 	return (tmp);
 }
 
+/*
+**	This function gets the link and put it into the list.
+*/
 void	ft_push_list(t_all *all, t_lst *lst)
 {
 	t_lst	*tmp;
@@ -71,12 +78,12 @@ void	ft_arg_to_list(char **argv, t_all *all)
 		ft_push_list(all, tmp);
 		i++;
 	}
-	if (all->lst == NULL)
-		all->lst = lst;
+	// if (all->lst == NULL)
+	// 	all->lst = lst;
 	pr = all->lst;
 	while (pr->next != all->lst)
 	{
-		ft_print_select("COUCOU");
+		// ft_print_select("COUCOU");
 		ft_print_select(pr->value);
 		pr = pr->next;
 	}
