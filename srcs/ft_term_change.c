@@ -15,13 +15,18 @@
 /*
 **	This function will modify the shell behavement.
 */
-int		ft_init_termios(t_all *all)
+int		ft_init_termios(struct termios *term, t_all *all)
 {
-	all->term.c_lflag &= ~(ICANON);
-	all->term.c_lflag &= ~(ECHO);
-	all->term.c_cc[VMIN] = 1;
-	all->term.c_cc[VTIME] = 0;
-	if (tcsetattr(0, TCSADRAIN, (&all->term)) == -1)
+	if ((all->name_term = getenv("TERM")) == NULL)
+		return (0);
+	if (tgetent(NULL, all->name_term) == -1)
+		return (0);
+	if (tcgetattr(0, term) == -1)
+		return (0);
+	term->c_lflag &= ~(ICANON | ECHO);
+	term->c_cc[VMIN] = 1;
+	term->c_cc[VTIME] = 0;
+	if (tcsetattr(0, 0, term) == -1)
 		return (0);
 	return (1);
 }
@@ -29,12 +34,10 @@ int		ft_init_termios(t_all *all)
 /*
 **	This function will reset the shell with default's configuration
 */
-int		ft_end_termios(t_all *all)
+int		ft_end_termios(struct termios *term)
 {
-	if (tcgetattr(0, (&all->term)) == -1)
-		return (-1);
-	all->term.c_lflag = (ICANON | ECHO);
-	if (tcsetattr(0, 0, (&all->term)) == -1)
-		return (-1);
-	return (0);
+	term->c_lflag |= (ICANON | ECHO);
+	if (tcsetattr(0, 0, term) == -1)
+		return (0);
+	return (1);
 }

@@ -20,31 +20,28 @@ int		ft_test_select(void)
 	{
 		read(0, buffer, 3);
 		if (buffer[0] == 27)
-			ft_putstr("It's ALIIIIIIVE\n");
-		else if (buffer[0] == 4)
-		{
-			ft_putstr("ole\n");
 			return (0);
+		else
+		{
+			ft_putnbr_fd(*(unsigned int *)buffer, 2);
+			ft_putchar('\n');
 		}
+		// return (0);
 	}
 	return (0);
 }
 
 int		main(int argc, char **argv)
 {
+	struct termios term;
 	t_all	all;
 
 	(void)argc;
 	(void)argv;
-	if ((all.name_term = getenv("TERM")) == NULL)
-		return (-1);
-	if (tgetent(NULL, all.name_term) == -1)
+	if (!ft_init_termios(&term, &all))
 		return (-1);
 	ft_test_select();
-  // remplis la structure termios des possibilités du terminal.
-	if (!ft_init_termios(&all))
+	if (!ft_end_termios(&term))
 		return (-1);
-	if (tcgetattr(0, (&all.term)) == -1)
-		return (-1);
-	return (ft_end_termios(&all));
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/19 18:14:22 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/20 13:45:40 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,7 @@ DEBUG 		= no
 ifeq ($(DEBUG),no)
     FLAGS	=-Wall -Werror -Wextra -ltermcap
 else
-    FLAGS	=-g
+    FLAGS	=-g -ltermcap
 endif
 SRC 		= ft_select.c ft_term_change.c
 

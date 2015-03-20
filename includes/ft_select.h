@@ -19,9 +19,27 @@
 # include <termcap.h>
 
 
+typedef struct 	s_lst
+{
+	char	*value;
+	int		select;
+	int		line;
+	struct	s_lst *next;
+	struct	s_lst *prev;
+}				t_lst;
+
+typedef enum	s_enum
+{
+	LEFT_KEY = 1480874779,
+	RIGHT_KEY = 1480809243,
+	UP_KEY = 1480678171,
+	DOWN_KEY = 1480743707,
+	ESC_KEY = UNKNOWN,
+	SPACE_KEY = 1469045280,
+}				t_enum;
+
 typedef struct	s_all
 {
-	struct termios term;
 	char	*name_term;
 }				t_all;
 
@@ -38,7 +56,7 @@ typedef struct	s_all
 /*
 **	ft_term_change.c
 */
-int		ft_init_termios(t_all *all);
-int		ft_end_termios(t_all *all);
+int		ft_init_termios(struct termios *term, t_all *all);
+int		ft_end_termios(struct termios *term);
 
 #endif
