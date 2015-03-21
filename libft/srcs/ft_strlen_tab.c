@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strlen_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/03/17 15:27:27 by tcarmet           #+#    #+#             */
+/*   Updated: 2015/03/17 15:27:33 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+size_t	ft_strlen_tab(char **tab)
 {
-	return (write(1, &c, 1));
+	int i;
+
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
 }

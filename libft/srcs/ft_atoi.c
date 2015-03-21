@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/04 10:42:14 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/09 18:36:10 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+int		ft_atoi(const char *str)
 {
-	return (write(1, &c, 1));
+	int nb;
+	int sign;
+
+	sign = 1;
+	nb = 0;
+	while (*str == ' ' || *str == '\n' || *str == '\v' ||
+				*str == '\t' || *str == '\r' || *str == '\f')
+		++str;
+	if (*str == '-')
+	{
+		sign = -1;
+		++str;
+	}
+	else if (*str == '+')
+		++str;
+	while (*str >= '0' && *str <= '9')
+	{
+		nb = nb * 10;
+		nb = nb + (*str - '0');
+		++str;
+	}
+	return (sign * nb);
 }

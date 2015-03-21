@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_free_tb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/03/17 15:27:06 by tcarmet           #+#    #+#             */
+/*   Updated: 2015/03/17 15:27:17 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+void	ft_free_tb(char ***s)
 {
-	return (write(1, &c, 1));
+	int	i;
+
+	i = 0;
+	while ((*s)[i])
+	{
+		free((*s)[i]);
+		(*s)[i] = NULL;
+		i++;
+	}
+	free(*s);
+	*s = NULL;
 }

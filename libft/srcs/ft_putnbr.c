@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/07 17:55:27 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/11 22:12:53 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+void	ft_putnbr(int n)
 {
-	return (write(1, &c, 1));
+	unsigned int nb;
+
+	nb = n;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		nb = -n;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	if (nb < 10)
+		ft_putchar(nb + 48);
 }

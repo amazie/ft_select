@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/05 14:53:40 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/05 16:48:48 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	return (write(1, &c, 1));
+	char	*c1;
+
+	c1 = s1;
+	while (*c1)
+		c1++;
+	while (*s2 && n > 0)
+	{
+		*c1 = *s2;
+		c1++;
+		s2++;
+		n--;
+	}
+	*c1 = '\0';
+	return (s1);
 }

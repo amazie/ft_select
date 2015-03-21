@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/08 19:22:17 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/09 18:59:28 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	return (write(1, &c, 1));
+	size_t	tmp1;
+	size_t	tmp2;
+
+	tmp1 = 0;
+	tmp2 = 0;
+	while (s1[tmp2] && tmp2 < n)
+	{
+		while (s2[tmp1] == s1[tmp2 + tmp1] && tmp2 + tmp1 < n)
+			tmp1++;
+		if (s2[tmp1] == '\0')
+			return ((char *)s1 + tmp2);
+		tmp2++;
+	}
+	return (0);
 }

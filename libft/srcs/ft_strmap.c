@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/09 22:05:44 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/09 23:44:33 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	return (write(1, &c, 1));
+	int		i;
+	char	*tmp;
+
+	i = 0;
+	if (s != 0 && (*f) != 0)
+	{
+		tmp = (char*)malloc(ft_strlen(s) + 1);
+		while (s[i] != '\0')
+		{
+			tmp[i] = (*f)(s[i]);
+			i++;
+		}
+		return (tmp);
+	}
+	return (0);
 }

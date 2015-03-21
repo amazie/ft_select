@@ -6,13 +6,13 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/20 17:15:46 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/21 13:48:39 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME 		= ft_select
 
-DEBUG 		= yes
+DEBUG 		= no
 ifeq ($(DEBUG),no)
     FLAGS	=-Wall -Werror -Wextra -ltermcap
 else
@@ -42,9 +42,9 @@ else
 		echo "\\033[1;31mCompilation with -Wall -Wextra -Werror...\\033[0;39m"
 endif
 		echo "\\033[1;34mGenerating objects... Please wait.\\033[0;39m"
+			Make -C libft/
 			gcc $(FLAGS) -c $(SRCS) -I$(INCDIR) $(LIBFLAGS) -I$(INCDIRLIB)
 			echo "compiling $(NAME)..."
-			Make -C libft/
 			gcc $(FLAGS) -o $(NAME) $(OBJS) $(LIBFLAGS)
 			echo "$(NAME) has been created !"
 

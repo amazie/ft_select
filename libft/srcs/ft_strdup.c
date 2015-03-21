@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/01/28 17:32:08 by tcarmet           #+#    #+#             */
+/*   Updated: 2015/03/10 17:59:04 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+char			*ft_strdup(char const *s1)
 {
-	return (write(1, &c, 1));
+	char	*str;
+	int		i;
+
+	if (s1)
+	{
+		str = ft_strnew(ft_strlen(s1) + 1);
+		if (str)
+		{
+			i = 0;
+			while (s1[i])
+			{
+				str[i] = s1[i];
+				i++;
+			}
+			return (str);
+		}
+	}
+	return (NULL);
 }

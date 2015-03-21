@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/08 19:22:04 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/08 19:46:13 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	return (write(1, &c, 1));
+	char		*s1;
+	const char	*s2;
+
+	s1 = dst;
+	s2 = src;
+	while (n-- != 0)
+	{
+		if (*s2 == c)
+		{
+			*s1++ = *s2++;
+			return (s1);
+		}
+		*s1++ = *s2++;
+	}
+	return (NULL);
 }

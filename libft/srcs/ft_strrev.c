@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/12/29 17:28:23 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/12/29 17:28:24 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+char		*ft_strrev(char *str)
 {
-	return (write(1, &c, 1));
+	char	a;
+	int		f;
+	int		d;
+
+	f = ft_strlen(str) - 1;
+	d = 0;
+	while (d < f && d != f)
+	{
+		a = str[f];
+		str[f] = str[d];
+		str[d] = a;
+		f--;
+		d++;
+	}
+	return (str);
 }

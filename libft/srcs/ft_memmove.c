@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:24:36 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:26:06 by tcarmet          ###   ########.fr       */
+/*   Created: 2014/11/07 13:13:01 by tcarmet           #+#    #+#             */
+/*   Updated: 2014/11/27 15:10:33 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_select.h"
+#include "libft.h"
 
-/*
-**	this putchar was created to work as the original with tputs
-*/
-
-int		ft_myputchar(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	return (write(1, &c, 1));
+	char	*copy;
+	char	*p1;
+	size_t	i;
+
+	copy = ft_strnew(len);
+	p1 = (char *)dst;
+	i = 0;
+	while (i < len)
+	{
+		copy[i] = ((char *)src)[i];
+		i++;
+	}
+	while (len > 0)
+	{
+		len--;
+		p1[len] = copy[len];
+	}
+	return (dst);
 }
