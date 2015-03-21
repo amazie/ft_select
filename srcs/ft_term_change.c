@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 18:12:09 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/19 18:12:11 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/21 18:49:06 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_init_termios(struct termios *term, t_all *all)
 	term->c_cc[VTIME] = 0;
 	if (tcsetattr(0, 0, term) == -1)
 		return (0);
+	tputs(tgetstr("ti", NULL), 1, ft_myputchar);
 	return (1);
 }
 
@@ -39,5 +40,6 @@ int		ft_end_termios(struct termios *term)
 	term->c_lflag |= (ICANON | ECHO);
 	if (tcsetattr(0, 0, term) == -1)
 		return (0);
+	tputs(tgetstr("te", NULL), 1, ft_myputchar);
 	return (1);
 }

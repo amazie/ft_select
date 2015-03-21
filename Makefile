@@ -18,7 +18,8 @@ ifeq ($(DEBUG),no)
 else
     FLAGS	=-g
 endif
-SRC 		= ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c ft_list.c
+SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c ft_list.c \
+				ft_select_misc.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h

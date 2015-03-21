@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/17 15:43:54 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/21 18:44:11 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ typedef enum	s_enum
 typedef struct	s_all
 {
 	char	*name_term;
+	int		nb_col;
+	int		nb_row;
 	t_lst	*lst;
 }				t_all;
 
@@ -76,5 +78,9 @@ int		ft_brain_select(char **argv, t_all *all);
 **	ft_list.c
 */
 void	ft_arg_to_list(char **argv, t_all *all);
+/*
+**	ft_select_misc.c 
+*/
+void	ft_clear_screen(void);
 
 #endif
