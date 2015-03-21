@@ -62,7 +62,7 @@ void	ft_push_list(t_all *all, t_lst *lst)
 }
 
 /*
-**	This function will collect the character table and put it into the linked list
+**	This function will collect the string and put it into the linked list
 */
 void	ft_arg_to_list(char **argv, t_all *all)
 {
