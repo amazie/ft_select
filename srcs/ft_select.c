@@ -32,7 +32,7 @@ int		ft_brain_select(char **argv, t_all *all)
 	char	buffer[3];
 
 	ft_arg_to_list(argv, all);
-	// ft_print_select(argv);
+	ft_print_list_select(all);
 	while (42)
 	{
 		read(0, buffer, 3);

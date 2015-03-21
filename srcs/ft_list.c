@@ -49,15 +49,18 @@ void	ft_push_list(t_all *all, t_lst *lst)
 	t_lst	*tmp;
 
 	if (all->lst == NULL)
+	{
+		lst->prev = lst;
+		lst->next = lst;
 		all->lst = lst;
+	}
 	else
-	{		
-		tmp = all->lst;
-		while (tmp != all->lst)
-			tmp = tmp->next;
+	{
+		tmp = all->lst->prev;
 		tmp->next = lst;
-		lst->prev = tmp;
 		lst->next = all->lst;
+		lst->prev = tmp;
+		all->lst->prev = lst;
 	}
 }
 
@@ -68,21 +71,12 @@ void	ft_arg_to_list(char **argv, t_all *all)
 {
 	int		i;
 	t_lst	*tmp;
-	t_lst	*pr;
 
 	i = 1;
-	pr = NULL;
 	while (argv[i])
 	{
 		tmp = ft_fill_list(argv[i]);
 		ft_push_list(all, tmp);
 		i++;
-	}
-	pr = all->lst;
-	while (pr->next != all->lst)
-	{
-		// ft_print_select("COUCOU");
-		ft_print_select(pr->value);
-		pr = pr->next;
 	}
 }

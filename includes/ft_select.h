@@ -63,6 +63,7 @@ int		ft_end_termios(struct termios *term);
 **	ft_print_select.c
 */
 void	ft_print_select(char *str);
+void	ft_print_list_select(t_all *all);
 /*
 **	ft_myputchar.c
 */
