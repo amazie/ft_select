@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 16:22:04 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 19:02:24 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 
 int		ft_brain_select(char **argv, t_all *all)
 {
-	char	buffer[3];
-
 	ft_clear_screen();
 	ft_arg_to_list(argv, all);
 	ft_print_list_select(all);
 	while (42)
 	{
-		read(0, buffer, 3);
-		// if (buffer == RETURN)
-		// 	ft_putselect(all);
-		if (buffer[0] != 27)
+		if (!ft_keyhook(all))
 			return (0);
 	}
 	return (0);

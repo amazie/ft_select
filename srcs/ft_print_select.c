@@ -6,14 +6,14 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:18:19 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 17:36:05 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 18:54:49 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
 /*
-**	This function will underline and print the current string.
+** This function will underline and print the current string.
 */
 void	ft_under_line(char *str)
 {
@@ -23,7 +23,7 @@ void	ft_under_line(char *str)
 }
 
 /*
-**	This function will activate reverse video mode on the selected string.
+** This function will activate reverse video mode on the selected string.
 */
 void	ft_print_select(char *str)
 {
@@ -33,8 +33,8 @@ void	ft_print_select(char *str)
 }
 
 /*
-**	This function will underline and reverse video mode on the
-**	selected and current string.
+** This function will underline and reverse video mode on the
+** selected and current string.
 */
 void	ft_select_underline(char *str)
 {
@@ -46,7 +46,7 @@ void	ft_select_underline(char *str)
 }
 
 /*
-**	This function will select the right behavement for the string output.
+** This function will select the right behavement for the string output.
 */
 void	ft_select_behavement(t_lst *lst)
 {
@@ -61,7 +61,7 @@ void	ft_select_behavement(t_lst *lst)
 }
 
 /*
-**	This function will print the list.
+** This function will print the list.
 */
 void	ft_print_list_select(t_all *all)
 {
