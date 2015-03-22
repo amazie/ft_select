@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:47:47 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/20 15:47:58 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 15:11:19 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_push_list(t_all *all, t_lst *lst)
 		lst->prev = lst;
 		lst->next = lst;
 		all->lst = lst;
+		lst->line = 1;
 	}
 	else
 	{

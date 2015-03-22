@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/21 18:44:11 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 15:15:40 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		ft_end_termios(struct termios *term);
 */
 void	ft_print_select(char *str);
 void	ft_print_list_select(t_all *all);
+char	*ft_under_line(char *str);
 /*
 **	ft_myputchar.c
 */
