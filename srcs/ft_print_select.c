@@ -6,59 +6,73 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:18:19 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 15:13:11 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 17:36:05 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
 /*
-**	This function print the string.
+**	This function will underline and print the current string.
+*/
+void	ft_under_line(char *str)
+{
+	tputs(tgetstr("us", NULL), 1, ft_myputchar);
+	ft_putendl_fd(str, 2);
+	tputs(tgetstr("ue", NULL), 1, ft_myputchar);
+}
+
+/*
+**	This function will activate reverse video mode on the selected string.
 */
 void	ft_print_select(char *str)
 {
-	tputs(str, 1, ft_myputchar);
-	tputs("\n", 1, ft_myputchar);
+	tputs(tgetstr("so", NULL), 1, ft_myputchar);
+	ft_putendl_fd(str, 2);
+	tputs(tgetstr("se", NULL), 1, ft_myputchar);
 }
 
 /*
-**	This function will underline the selected link.
+**	This function will underline and reverse video mode on the
+**	selected and current string.
 */
-char	*ft_under_line(char *str)
+void	ft_select_underline(char *str)
 {
-	char *tmp;
-
-	tmp = ft_strjoin(tgetstr("us", NULL), str);
-	tmp = ft_strjoin_free(tmp, tgetstr("ue", NULL));
-	return (tmp);
+	tputs(tgetstr("us", NULL), 1, ft_myputchar);
+	tputs(tgetstr("so", NULL), 1, ft_myputchar);
+	ft_putendl_fd(str, 2);
+	tputs(tgetstr("se", NULL), 1, ft_myputchar);
+	tputs(tgetstr("ue", NULL), 1, ft_myputchar);
 }
 
 /*
-**	This function print the list
+**	This function will select the right behavement for the string output.
+*/
+void	ft_select_behavement(t_lst *lst)
+{
+	if (lst->line == 1 && lst->select == 1)
+		ft_select_underline(lst->value);
+	else if (lst->line == 1)
+		ft_under_line(lst->value);
+	else if (lst->select == 1)
+		ft_print_select(lst->value);
+	else
+		ft_putendl_fd(lst->value, 2);
+}
+
+/*
+**	This function will print the list.
 */
 void	ft_print_list_select(t_all *all)
 {
 	t_lst	*tmp;
-	char	*str;
 
 	tmp = NULL;
-	if (all->lst->line == 1)
-	{
-		str = ft_under_line(all->lst->value);
-		ft_print_select(str);
-		free(str);
-	}
+	ft_select_behavement(all->lst);
 	tmp = all->lst->next;
 	while (tmp != all->lst)
 	{
-		if (tmp->line == 1)
-		{
-			str = ft_under_line(tmp->value);
-			ft_print_select(str);
-			free(str);
-		}
-		else
-			ft_print_select(tmp->value);
+		ft_select_behavement(tmp);
 		tmp = tmp->next;
 	}
 }

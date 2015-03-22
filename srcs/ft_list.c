@@ -6,14 +6,14 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:47:47 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 15:11:19 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 17:36:24 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
 /*
-**	This function will initialize the current position of the linked list
+**	This function will initialize the current position of the linked list.
 */
 t_lst	*ft_init_lst(void)
 {
@@ -66,7 +66,7 @@ void	ft_push_list(t_all *all, t_lst *lst)
 }
 
 /*
-**	This function will collect the string and put it into the linked list
+**	This function will collect the string and put it into the linked list.
 */
 void	ft_arg_to_list(char **argv, t_all *all)
 {
