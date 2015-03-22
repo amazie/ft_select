@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 18:12:09 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 16:20:04 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 20:51:02 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 */
 int		ft_init_termios(struct termios *term, t_all *all)
 {
+	all->enter = 0;
 	if ((all->name_term = getenv("TERM")) == NULL)
 		return (0);
 	if (tgetent(NULL, all->name_term) == -1)
@@ -30,19 +31,20 @@ int		ft_init_termios(struct termios *term, t_all *all)
 		return (0);
 	tputs(tgetstr("ti", NULL), 1, ft_myputchar);
 	tputs(tgetstr("vi", NULL), 1, ft_myputchar);
-
 	return (1);
 }
 
 /*
 **	This function will reset the shell with default's configuration
 */
-int		ft_end_termios(struct termios *term)
+int		ft_end_termios(struct termios *term, t_all *all)
 {
 	term->c_lflag |= (ICANON | ECHO);
 	if (tcsetattr(0, 0, term) == -1)
 		return (0);
 	tputs(tgetstr("te", NULL), 1, ft_myputchar);
 	tputs(tgetstr("ve", NULL), 1, ft_myputchar);
+	if (all->enter)
+		ft_print_enter(all);
 	return (1);
 }

@@ -19,7 +19,7 @@ else
     FLAGS	=-g
 endif
 SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c ft_list.c \
-				ft_select_misc.c ft_keyhook.c ft_moves.c
+				ft_select_misc.c ft_keyhook.c ft_moves.c ft_action.c ft_enter.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h

@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 19:25:33 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 21:03:25 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <term.h>
 # include <termios.h>
 # include <termcap.h>
-
+# define BUFFER *(unsigned int *)buffer
 
 typedef struct 	s_lst
 {
@@ -51,6 +51,8 @@ typedef struct	s_all
 	char	*name_term;
 	int		nb_col;
 	int		nb_row;
+	int		enter;
+	char	**ret_tab;
 	t_lst	*lst;
 }				t_all;
 
@@ -68,7 +70,7 @@ typedef struct	s_all
 **	ft_term_change.c
 */
 int		ft_init_termios(struct termios *term, t_all *all);
-int		ft_end_termios(struct termios *term);
+int		ft_end_termios(struct termios *term, t_all *all);
 /*
 **	ft_print_select.c
 */
@@ -102,4 +104,16 @@ int		ft_keyhook(t_all *all);
 */
 void	ft_move_up(t_all *all);
 void	ft_move_down(t_all *all);
+/*
+**	ft_action.c
+*/
+void	ft_space_key(t_all *all);
+int		ft_delete(t_all *all);
+/*
+**	ft_enter.c
+*/
+void	ft_print_enter(t_all *all);
+void	ft_stock_tab(t_all *all);
+void	ft_return_key(t_all *all);
+
 #endif

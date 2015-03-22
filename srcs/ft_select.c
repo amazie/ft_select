@@ -6,12 +6,18 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 19:02:24 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 21:30:13 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 #include <stdio.h>
+
+/*
+**	This function will in the first place collect the arguments given by
+**	the user, then it will print the arguments and enter into a infinite
+**	loop to keep the program on.
+*/
 
 int		ft_brain_select(char **argv, t_all *all)
 {
@@ -30,13 +36,14 @@ int		main(int argc, char **argv)
 {
 	struct termios term;
 	t_all	all;
+
 	(void)argc;
 	all.lst = NULL;
 	if (!ft_init_termios(&term, &all))
 		return (-1);
 	if (argc >= 2)
 		ft_brain_select(argv, &all);
-	if (!ft_end_termios(&term))
+	if (!ft_end_termios(&term, &all))
 		return (-1);
 	return (0);
 }

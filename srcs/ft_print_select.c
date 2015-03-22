@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:18:19 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 18:54:49 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/22 21:11:50 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_under_line(char *str)
 }
 
 /*
-** This function will activate reverse video mode on the selected string.
+** This function will print the reverse video mode on the selected string.
 */
 void	ft_print_select(char *str)
 {
@@ -33,8 +33,8 @@ void	ft_print_select(char *str)
 }
 
 /*
-** This function will underline and reverse video mode on the
-** selected and current string.
+**	This function will print the underline and reverse video
+** 	mode on the selected and current string.
 */
 void	ft_select_underline(char *str)
 {
