@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 19:31:34 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 21:14:35 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/23 11:02:57 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_space_key(t_all *all)
 }
 
 /*
-**	This function will delete the current selected string 
+**	This function will delete the current selected string
 **	and move the cursor down.
 */
 int		ft_delete(t_all *all)
@@ -58,4 +58,3 @@ int		ft_delete(t_all *all)
 	free(tmp);
 	return (1);
 }
-

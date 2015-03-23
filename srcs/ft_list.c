@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:47:47 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 17:36:24 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/23 11:06:35 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_lst	*ft_init_lst(void)
 }
 
 /*
-**	This function create a new link to the linked list, 
+**	This function create a new link to the linked list,
 **	and put the string into the list.
 */
 t_lst	*ft_fill_list(char *str)

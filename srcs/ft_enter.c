@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 20:52:41 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 21:22:26 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/23 11:03:20 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_stock_tab(t_all *all)
 
 /*
 **	This function will count how much select string are on and
-** 	will allocate enough memory into ret_tab.
+**	will allocate enough memory into ret_tab.
 */
 void	ft_return_key(t_all *all)
 {

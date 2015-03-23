@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 21:03:25 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/23 10:58:07 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 # include <termcap.h>
 # define BUFFER *(unsigned int *)buffer
 
-typedef struct 	s_lst
+typedef struct	s_lst
 {
-	char	*value;
-	int		select;
-	int		line;
-	struct	s_lst *next;
-	struct	s_lst *prev;
+	char			*value;
+	int				select;
+	int				line;
+	struct s_lst	*next;
+	struct s_lst	*prev;
 }				t_lst;
 
-typedef enum	s_enum
+typedef enum	e_enum
 {
 	LEFT_KEY = 4479771,
 	RIGHT_KEY = 4414235,
@@ -69,51 +69,51 @@ typedef struct	s_all
 /*
 **	ft_term_change.c
 */
-int		ft_init_termios(struct termios *term, t_all *all);
-int		ft_end_termios(struct termios *term, t_all *all);
+int				ft_init_termios(struct termios *term, t_all *all);
+int				ft_end_termios(struct termios *term, t_all *all);
 /*
 **	ft_print_select.c
 */
-void	ft_print_list_select(t_all *all);
-void	ft_under_line(char *str);
-void	ft_select_underline(char *str);
-void	ft_select_behavement(t_lst *lst);
-void	ft_print_select(char *str);
+void			ft_print_list_select(t_all *all);
+void			ft_under_line(char *str);
+void			ft_select_underline(char *str);
+void			ft_select_behavement(t_lst *lst);
+void			ft_print_select(char *str);
 /*
 **	ft_myputchar.c
 */
-int		ft_myputchar(int c);
+int				ft_myputchar(int c);
 /*
 **	ft_select.c
 */
-int		ft_brain_select(char **argv, t_all *all);
+int				ft_brain_select(char **argv, t_all *all);
 /*
 **	ft_list.c
 */
-void	ft_arg_to_list(char **argv, t_all *all);
+void			ft_arg_to_list(char **argv, t_all *all);
 /*
-**	ft_select_misc.c 
+**	ft_select_misc.c
 */
-void	ft_clear_screen(void);
+void			ft_clear_screen(void);
 /*
 **	ft_keyhook.c
 */
-int		ft_keyhook(t_all *all);
+int				ft_keyhook(t_all *all);
 /*
 **	ft_moves.c
 */
-void	ft_move_up(t_all *all);
-void	ft_move_down(t_all *all);
+void			ft_move_up(t_all *all);
+void			ft_move_down(t_all *all);
 /*
 **	ft_action.c
 */
-void	ft_space_key(t_all *all);
-int		ft_delete(t_all *all);
+void			ft_space_key(t_all *all);
+int				ft_delete(t_all *all);
 /*
 **	ft_enter.c
 */
-void	ft_print_enter(t_all *all);
-void	ft_stock_tab(t_all *all);
-void	ft_return_key(t_all *all);
+void			ft_print_enter(t_all *all);
+void			ft_stock_tab(t_all *all);
+void			ft_return_key(t_all *all);
 
 #endif
