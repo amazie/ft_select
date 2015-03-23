@@ -6,7 +6,7 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/23 15:23:23 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/23 19:24:17 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -56,6 +56,7 @@ endif
 clean : 
 			Make -C ./libft/ clean
 			rm -rf $(OBJS)
+			rm -rf $(OBJDIR)
 			echo "objects files has been removed !"
 
 fclean :	clean

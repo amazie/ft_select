@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 10:58:07 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/23 18:46:02 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <term.h>
 # include <termios.h>
 # include <termcap.h>
+# include <sys/ioctl.h>
 # define BUFFER *(unsigned int *)buffer
 
 typedef struct	s_lst
@@ -96,6 +97,7 @@ void			ft_arg_to_list(char **argv, t_all *all);
 /*
 **	ft_select_misc.c
 */
+t_all			*ft_stock(t_all *all, int i);
 void			ft_clear_screen(void);
 /*
 **	ft_keyhook.c
@@ -127,5 +129,8 @@ void			ft_deselect_all(t_all *all);
 /*
 **	ft_select_signal.c
 */
-void			ft_sigint_sig(int i);
+void			ft_signal(void);
+void			ft_interrupt(int i);
+void			ft_sig_stop(int i);
+void			ft_sig_cont(int i);
 #endif

@@ -6,22 +6,11 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 11:05:51 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/23 18:11:05 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
-#include <stdio.h>
-
-
-// t_all	*ft_stock(t_all *all, int i)
-// {
-// 	static t_all *tmp;
-
-// 	if (i == 0)
-// 		tmp = all;
-// 	return (tmp);
-// }
 
 /*
 **	This function will in the first place collect the arguments given by
@@ -33,11 +22,9 @@ int		ft_brain_select(char **argv, t_all *all)
 	ft_clear_screen();
 	ft_arg_to_list(argv, all);
 	ft_print_list_select(all);
-	// ft_stock(all, 0);
+	ft_stock(all, 0);
 	while (42)
 	{
-		// ft_signal();
-		// signal(SIGINT, ft_sigint_sig);
 		if (!ft_keyhook(all))
 			return (0);
 	}
@@ -50,7 +37,7 @@ int		main(int argc, char **argv)
 
 	(void)argc;
 	all.lst = NULL;
-	// ft_signal();
+	ft_signal();
 	if (!ft_init_termios(&all))
 		return (-1);
 	if (argc >= 2)
