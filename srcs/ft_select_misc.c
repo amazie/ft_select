@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_misc.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/21 18:18:11 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 18:13:31 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/23 19:48:31 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_clear_screen(void)
 
 t_all	*ft_stock(t_all *all, int i)
 {
-	static t_all *tmp;
+	static t_all *tmp = NULL;
 
 	if (i == 0)
 		tmp = all;
