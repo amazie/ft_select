@@ -6,7 +6,7 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/21 15:41:15 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/23 15:23:23 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,7 +26,7 @@ OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h
 LIBFLAGS 	= -L./libft/ -lft
 SRCDIR  	= ./srcs/
-OBJDIR  	= ./
+OBJDIR  	= ./obj/
 INCDIRLIB	= ./libft/includes/
 INCDIR		= ./includes/
 SRCS    	= $(addprefix $(SRCDIR), $(SRC))
@@ -46,6 +46,8 @@ endif
 			Make -C libft/
 			gcc $(FLAGS) -c $(SRCS) -I $(INCDIR) -I $(INCDIRLIB)
 			echo "compiling $(NAME)..."
+			mkdir -p $(OBJDIR)
+			mv $(OBJ) $(OBJDIR)
 			gcc $(FLAGS) -ltermcap -o $(NAME) $(OBJS) $(LIBFLAGS)
 			echo "$(NAME) has been created !"
 
