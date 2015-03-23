@@ -18,8 +18,9 @@ ifeq ($(DEBUG),no)
 else
     FLAGS	=-g
 endif
-SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c ft_list.c \
-				ft_select_misc.c ft_keyhook.c ft_moves.c ft_action.c ft_enter.c
+SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c \
+				ft_list.c ft_select_misc.c ft_keyhook.c ft_moves.c ft_action.c \
+				ft_enter.c ft_select_all.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h
@@ -43,9 +44,9 @@ else
 endif
 		echo "\\033[1;34mGenerating objects... Please wait.\\033[0;39m"
 			Make -C libft/
-			cc $(FLAGS) -c $(SRCS) -I $(INCDIR) -I $(INCDIRLIB)
+			gcc $(FLAGS) -c $(SRCS) -I $(INCDIR) -I $(INCDIRLIB)
 			echo "compiling $(NAME)..."
-			cc $(FLAGS) -ltermcap -o $(NAME) $(OBJS) $(LIBFLAGS)
+			gcc $(FLAGS) -ltermcap -o $(NAME) $(OBJS) $(LIBFLAGS)
 			echo "$(NAME) has been created !"
 
 .PHONY: 	clean fclean re

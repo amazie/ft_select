@@ -44,6 +44,7 @@ typedef enum	e_enum
 	PAGE_UP_KEY = 2117425947,
 	PAGE_DOWN_KEY = 2117491483,
 	TAB_KEY = 9,
+	CRTL_A_KEY = 1,
 }				t_enum;
 
 typedef struct	s_all
@@ -117,5 +118,10 @@ void			ft_goto_end(t_all *all);
 void			ft_print_enter(t_all *all);
 void			ft_stock_tab(t_all *all);
 void			ft_return_key(t_all *all);
+/*
+**	ft_select_all.c
+*/
+void			ft_select_all(t_all *all);
+void			ft_deselect_all(t_all *all);
 
 #endif

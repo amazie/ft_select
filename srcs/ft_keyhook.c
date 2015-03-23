@@ -20,6 +20,7 @@ int		ft_keyhook(t_all *all)
 {
 	char	*buffer[5];
 
+	(void)all;
 	ft_bzero(buffer, 5);
 	read(0, buffer, 4);
 	if (BUFFER == ESC_KEY)
@@ -34,6 +35,8 @@ int		ft_keyhook(t_all *all)
 		ft_goto_begin(all);
 	if (BUFFER == END_KEY)
 		ft_goto_end(all);
+	if (BUFFER == CRTL_A_KEY)
+		ft_select_all(all);
 	if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
 	{
 		if (!ft_delete(all))

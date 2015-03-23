@@ -83,6 +83,7 @@ int		ft_delete(t_all *all)
 	tmp->prev->next = tmp->next;
 	tmp->next->prev = tmp->prev;
 	tmp->next->line = 1;
+	free(tmp->value);
 	free(tmp);
 	return (1);
 }
