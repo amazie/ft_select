@@ -12,19 +12,8 @@
 
 #include "ft_select.h"
 
-/*
-**	This function collect the keyboard keys, and call the right function
-**	for the specified key.
-*/
-int		ft_keyhook(t_all *all)
+static void	ft_simple_key(t_all *all, char *buffer[5])
 {
-	char	*buffer[5];
-
-	(void)all;
-	ft_bzero(buffer, 5);
-	read(0, buffer, 4);
-	if (BUFFER == ESC_KEY)
-		return (0);
 	if (BUFFER == DOWN_KEY)
 		ft_move_down(all);
 	if (BUFFER == UP_KEY)
@@ -37,6 +26,22 @@ int		ft_keyhook(t_all *all)
 		ft_goto_end(all);
 	if (BUFFER == CRTL_A_KEY)
 		ft_select_all(all);
+}
+
+/*
+**	This function collect the keyboard keys, and call the right function
+**	for the specified key.
+*/
+int			ft_keyhook(t_all *all)
+{
+	char	*buffer[5];
+
+	(void)all;
+	ft_bzero(buffer, 5);
+	read(0, buffer, 4);
+	if (BUFFER == ESC_KEY)
+		return (0);
+	ft_simple_key(all, buffer);
 	if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
 	{
 		if (!ft_delete(all))

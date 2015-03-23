@@ -20,7 +20,7 @@ else
 endif
 SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c \
 				ft_list.c ft_select_misc.c ft_keyhook.c ft_moves.c ft_action.c \
-				ft_enter.c ft_select_all.c
+				ft_enter.c ft_select_all.c ft_select_signal.c
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h

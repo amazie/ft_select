@@ -49,6 +49,7 @@ typedef enum	e_enum
 
 typedef struct	s_all
 {
+	struct 	termios	*term;
 	char	*name_term;
 	int		nb_col;
 	int		nb_row;
@@ -70,8 +71,8 @@ typedef struct	s_all
 /*
 **	ft_term_change.c
 */
-int				ft_init_termios(struct termios *term, t_all *all);
-int				ft_end_termios(struct termios *term, t_all *all);
+int				ft_init_termios(t_all *all);
+int				ft_end_termios(t_all *all);
 /*
 **	ft_print_select.c
 */
@@ -123,5 +124,8 @@ void			ft_return_key(t_all *all);
 */
 void			ft_select_all(t_all *all);
 void			ft_deselect_all(t_all *all);
-
+/*
+**	ft_select_signal.c
+*/
+void			ft_sigint_sig(int i);
 #endif

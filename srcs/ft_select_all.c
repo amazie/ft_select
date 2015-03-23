@@ -30,7 +30,7 @@ void	ft_deselect_all(t_all *all)
 
 /*
 **	ft_select_all will select all elements if one element isn't selected
-**	else if all elements are selected ft_deselect_all is called.
+**	else if all elements are selected ft_deselect_all is call.
 */
 void	ft_select_all(t_all *all)
 {
