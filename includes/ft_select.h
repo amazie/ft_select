@@ -109,6 +109,8 @@ void			ft_move_down(t_all *all);
 */
 void			ft_space_key(t_all *all);
 int				ft_delete(t_all *all);
+void			ft_goto_begin(t_all *all);
+void			ft_goto_end(t_all *all);
 /*
 **	ft_enter.c
 */

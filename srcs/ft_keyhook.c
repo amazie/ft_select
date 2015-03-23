@@ -30,6 +30,10 @@ int		ft_keyhook(t_all *all)
 		ft_move_up(all);
 	if (BUFFER == SPACE_KEY)
 		ft_space_key(all);
+	if (BUFFER == HOME_KEY)
+		ft_goto_begin(all);
+	if (BUFFER == END_KEY)
+		ft_goto_end(all);
 	if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
 	{
 		if (!ft_delete(all))

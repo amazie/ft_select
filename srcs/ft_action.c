@@ -13,6 +13,34 @@
 #include "ft_select.h"
 
 /*
+**	ft_goto_begin will go to the first string of the list.
+*/
+void	ft_goto_begin(t_all *all)
+{
+	t_lst	*tmp;
+
+	tmp = all->lst;
+	while (tmp->line != 1)
+		tmp = tmp->next;
+	tmp->line = 0;
+	all->lst->line = 1;
+}
+
+/*
+**	ft_goto_end will go to the last string of the list.
+*/
+void	ft_goto_end(t_all *all)
+{
+	t_lst	*tmp;
+
+	tmp = all->lst;
+	while (tmp->line != 1)
+		tmp = tmp->next;
+	tmp->line = 0;
+	all->lst->prev->line = 1;
+}
+
+/*
 **	This function will reverse video mode on the current string and move
 **	the cursor down.
 */
