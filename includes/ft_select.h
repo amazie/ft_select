@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 18:46:02 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/24 13:46:42 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,5 @@ void			ft_deselect_all(t_all *all);
 **	ft_select_signal.c
 */
 void			ft_signal(void);
-void			ft_interrupt(int i);
-void			ft_sig_stop(int i);
-void			ft_sig_cont(int i);
+void			ft_catch_signal(int i);
 #endif
