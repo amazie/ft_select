@@ -6,7 +6,7 @@
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:54:53 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/24 15:13:19 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 18:14:44 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static void	ft_sig_cont(void)
 	tputs(tgetstr("vi", NULL), 1, ft_myputchar);
 	signal(SIGTSTP, ft_catch_signal);
 	ft_print_list_select(all);
+	ft_check_size(all);
 }
 
 /*

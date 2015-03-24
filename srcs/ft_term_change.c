@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_term_change.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 18:12:09 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/22 20:51:02 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/24 17:47:52 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 */
 int		ft_init_termios(t_all *all)
 {
+	struct winsize win;
+
 	all->enter = 0;
 	if ((all->name_term = getenv("TERM")) == NULL)
 		return (0);
@@ -27,6 +29,9 @@ int		ft_init_termios(t_all *all)
 	all->term->c_lflag &= ~(ICANON | ECHO);
 	all->term->c_cc[VMIN] = 1;
 	all->term->c_cc[VTIME] = 0;
+	ioctl(0, TIOCGWINSZ, &win);
+	all->nb_col = win.ws_col;
+	all->nb_row = win.ws_row;
 	if (tcsetattr(0, 0, all->term) == -1)
 		return (0);
 	tputs(tgetstr("ti", NULL), 1, ft_myputchar);

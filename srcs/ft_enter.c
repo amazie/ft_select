@@ -6,7 +6,7 @@
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 20:52:41 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 13:49:15 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 16:52:59 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ void	ft_print_enter(t_all *all)
 			ft_putchar(32);
 		i++;
 	}
-	ft_putchar('\n');
+	i = 0;
+	if (all->ret_tab[i])
+		ft_putchar('\n');
 }
 
 /*

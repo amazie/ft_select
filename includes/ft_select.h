@@ -6,7 +6,7 @@
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 15:06:32 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 18:17:18 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct	s_all
 	int		nb_col;
 	int		nb_row;
 	int		enter;
+	int		count_line;
+	// int		count_col;
 	char	**ret_tab;
 	t_lst	*lst;
 }				t_all;
@@ -135,4 +137,5 @@ void			ft_catch_signal(int i);
 **	ft_select_resize.c
 */
 void			ft_resize(void);
+int				ft_check_size(t_all *all);
 #endif

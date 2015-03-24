@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_select.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:18:19 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 11:05:28 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 17:52:05 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ void	ft_print_list_select(t_all *all)
 
 	tmp = NULL;
 	ft_select_behavement(all->lst);
+	// all->count_line = 1;
 	tmp = all->lst->next;
 	while (tmp != all->lst)
 	{
 		ft_select_behavement(tmp);
+		// all->count_line += 1;
 		tmp = tmp->next;
 	}
 }

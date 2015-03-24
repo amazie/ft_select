@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_action.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 19:31:34 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/23 11:02:57 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 17:52:34 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ int		ft_delete(t_all *all)
 	tmp->next->line = 1;
 	free(tmp->value);
 	free(tmp);
+	all->count_line -= 1;
 	return (1);
 }
