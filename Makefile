@@ -6,7 +6,7 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/23 19:24:17 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/24 15:07:04 by tcoppin          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,7 +20,7 @@ else
 endif
 SRC 		= 	ft_select.c ft_term_change.c ft_print_select.c ft_myputchar.c \
 				ft_list.c ft_select_misc.c ft_keyhook.c ft_moves.c ft_action.c \
-				ft_enter.c ft_select_all.c ft_select_signal.c
+				ft_enter.c ft_select_all.c ft_select_signal.c ft_select_resize.c 
 
 OBJ 		= $(SRC:.c=.o)
 INC 		= ft_select.h

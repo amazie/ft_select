@@ -6,7 +6,7 @@
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 13:46:42 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 15:06:32 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,4 +131,8 @@ void			ft_deselect_all(t_all *all);
 */
 void			ft_signal(void);
 void			ft_catch_signal(int i);
+/*
+**	ft_select_resize.c
+*/
+void			ft_resize(void);
 #endif
