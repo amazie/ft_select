@@ -6,27 +6,11 @@
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 18:01:35 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/24 18:21:35 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
-
-int		ft_check_size(t_all *all)
-{
-	if (all->nb_row - 2 < all->count_line)// || all->nb_col < all->count_col)
-	{
-		ft_clear_screen();
-		ft_putendl_fd("Windows size too small.", 2);
-		return (0);
-	}
-	else
-	{
-		ft_clear_screen();
-		ft_print_list_select(all);
-	}
-	return (1);
-}
 
 /*
 **	This function will in the first place collect the arguments given by
