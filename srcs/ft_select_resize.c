@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/24 14:48:07 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/25 17:07:25 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 17:39:41 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_resize(void)
 
 	all = NULL;
 	all = ft_stock(all, 1);
+	ft_clear_screen();
 	ioctl(0, TIOCGWINSZ, &win);
 	all->nb_col = win.ws_col;
 	all->nb_row = win.ws_row;

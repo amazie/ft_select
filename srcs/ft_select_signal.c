@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:54:53 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/25 17:32:31 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 17:38:17 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	ft_sig_stop(void)
 	cp[1] = 0;
 	all->term.c_lflag |= (ICANON | ECHO);
 	signal(SIGTSTP, SIG_DFL);
+	ft_clear_screen();
 	tcsetattr(0, 0, &(all->term));
 	tputs(tgetstr("te", NULL), 1, ft_myputchar);
 	tputs(tgetstr("ve", NULL), 1, ft_myputchar);
