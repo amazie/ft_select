@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 18:24:08 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 15:23:53 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_brain_select(char **argv, t_all *all)
 {
 	ft_clear_screen();
 	ft_arg_to_list(argv, all);
+	ft_count_col(all);
 	ft_print_list_select(all);
 	ft_check_size(all);
 	ft_stock(all, 0);

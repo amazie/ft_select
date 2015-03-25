@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_resize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/24 14:48:07 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/24 18:19:30 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 15:16:39 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 int		ft_check_size(t_all *all)
 {
-	if (all->nb_row - 2 < all->count_line)// || all->nb_col < all->count_col)
+	if (all->nb_row - 2 < all->count_line || all->nb_col < all->count_colomn)
 	{
 		ft_clear_screen();
 		ft_putendl_fd("Windows size too small.", 2);
@@ -43,4 +43,18 @@ void	ft_resize(void)
 	all->nb_col = win.ws_col;
 	all->nb_row = win.ws_row;
 	ft_check_size(all);
+}
+
+void	ft_count_col(t_all *all)
+{
+	t_lst	*tmp;
+
+	all->count_colomn = all->lst->len;
+	tmp = all->lst->next;
+	while (tmp != all->lst)
+	{
+		if (tmp->len > all->count_colomn)
+			all->count_colomn = tmp->len;
+		tmp = tmp->next;
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:47:47 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 17:51:54 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 14:52:36 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_lst	*ft_init_lst(void)
 	tmp->value = NULL;
 	tmp->select = 0;
 	tmp->line = 0;
+	tmp->len = 0;
 	tmp->next = NULL;
 	tmp->prev = NULL;
 	return (tmp);
@@ -38,6 +39,7 @@ t_lst	*ft_fill_list(char *str)
 
 	tmp = ft_init_lst();
 	tmp->value = ft_strdup(str);
+	tmp->len = ft_strlen(tmp->value);
 	return (tmp);
 }
 

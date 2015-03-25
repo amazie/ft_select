@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 18:17:18 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 15:16:54 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct	s_lst
 	int				line;
 	struct s_lst	*next;
 	struct s_lst	*prev;
+	int				len;
 }				t_lst;
 
 typedef enum	e_enum
@@ -56,20 +57,10 @@ typedef struct	s_all
 	int		nb_row;
 	int		enter;
 	int		count_line;
-	// int		count_col;
+	int		count_colomn;
 	char	**ret_tab;
 	t_lst	*lst;
 }				t_all;
-
-// struct termios {
-//     tcflag_t c_iflag;
-//     tcflag_t c_oflag;
-//     tcflag_t c_cflag;
-//     tcflag_t c_lflag;
-//     cc_t c_cc[NCCS];
-//     speed_t c_ispeed;
-//     speed_t c_ospeed;
-// };
 
 /*
 **	ft_term_change.c
@@ -138,4 +129,5 @@ void			ft_catch_signal(int i);
 */
 void			ft_resize(void);
 int				ft_check_size(t_all *all);
+void			ft_count_col(t_all *all);
 #endif
