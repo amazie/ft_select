@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_signal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/23 15:54:53 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/24 18:14:44 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 17:32:31 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static void	ft_sig_stop(void)
 	
 	all = NULL;
 	all = ft_stock(all, 1);
-	cp[0] = all->term->c_cc[VSUSP];
+	cp[0] = all->term.c_cc[VSUSP];
 	cp[1] = 0;
-	all->term->c_lflag |= (ICANON | ECHO);
+	all->term.c_lflag |= (ICANON | ECHO);
 	signal(SIGTSTP, SIG_DFL);
-	tcsetattr(0, 0, all->term);
+	tcsetattr(0, 0, &(all->term));
 	tputs(tgetstr("te", NULL), 1, ft_myputchar);
 	tputs(tgetstr("ve", NULL), 1, ft_myputchar);
 	ioctl(0, TIOCSTI, cp);
@@ -44,14 +44,14 @@ static void	ft_sig_cont(void)
 
 	all = NULL;
 	all = ft_stock(all, 1);
-	all->term->c_lflag &= ~(ICANON | ECHO);
-	all->term->c_cc[VMIN] = 1;
-	all->term->c_cc[VTIME] = 0;
-	tcsetattr(0, 0, all->term);
+	all->term.c_lflag &= ~(ICANON | ECHO);
+	all->term.c_cc[VMIN] = 1;
+	all->term.c_cc[VTIME] = 0;
+	tcsetattr(0, 0, &(all->term));
 	tputs(tgetstr("ti", NULL), 1, ft_myputchar);
 	tputs(tgetstr("vi", NULL), 1, ft_myputchar);
 	signal(SIGTSTP, ft_catch_signal);
-	ft_print_list_select(all);
+	ft_resize();
 	ft_check_size(all);
 }
 

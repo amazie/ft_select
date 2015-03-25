@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:40:15 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 15:23:53 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 16:48:40 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,17 @@ int		main(int argc, char **argv)
 	all.lst = NULL;
 	ft_signal();
 	if (!ft_init_termios(&all))
+	{
+		ft_putendl("YOLO");
 		return (-1);
+	}
 	if (argc >= 2)
 		ft_brain_select(argv, &all);
 	if (!ft_end_termios(&all))
+	{
+		ft_putendl("TOTO");
+		ft_putendl_fd("TOTO", 2);	
 		return (-1);
+	}
 	return (0);
 }

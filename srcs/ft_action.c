@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 19:31:34 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 15:16:43 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 16:57:48 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,12 @@ int		ft_delete(t_all *all)
 	free(tmp->value);
 	free(tmp);
 	ft_count_col(all);
-	all->count_line -= 1;
+	all->count[LINE] -= 1;
 	return (1);
+}
+
+void	ft_tab_key(t_all *all)
+{
+	ft_deselect_all(all);
+	ft_space_key(all);
 }

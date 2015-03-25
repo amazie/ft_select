@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_keyhook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 18:58:30 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 18:09:16 by tcoppin          ###   ########.fr       */
+/*   Updated: 2015/03/25 16:55:02 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	ft_simple_key(t_all *all, char *buffer[5])
 		ft_goto_end(all);
 	if (BUFFER == CRTL_A_KEY)
 		ft_select_all(all);
+	if (BUFFER == TAB_KEY)
+		ft_tab_key(all);
 }
 
 /*
@@ -38,10 +40,10 @@ int			ft_keyhook(t_all *all)
 
 	ft_bzero(buffer, 5);
 	read(0, buffer, 4);
+	if (BUFFER == ESC_KEY)
+		return (0);
 	if (ft_check_size(all))
 	{
-		if (BUFFER == ESC_KEY)
-			return (0);
 		ft_simple_key(all, buffer);
 		if (BUFFER == DEL_KEY || BUFFER == SUP_KEY)
 		{

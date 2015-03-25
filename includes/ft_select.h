@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 15:16:54 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 16:58:02 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <termcap.h>
 # include <sys/ioctl.h>
 # define BUFFER *(unsigned int *)buffer
+# define LINE 0
+# define COL 1
 
 typedef struct	s_lst
 {
@@ -51,13 +53,12 @@ typedef enum	e_enum
 
 typedef struct	s_all
 {
-	struct 	termios	*term;
+	struct 	termios	term;
 	char	*name_term;
 	int		nb_col;
 	int		nb_row;
 	int		enter;
-	int		count_line;
-	int		count_colomn;
+	int		count[2];
 	char	**ret_tab;
 	t_lst	*lst;
 }				t_all;
@@ -101,6 +102,7 @@ int				ft_keyhook(t_all *all);
 */
 void			ft_move_up(t_all *all);
 void			ft_move_down(t_all *all);
+void			ft_tab_key(t_all *all);
 /*
 **	ft_action.c
 */

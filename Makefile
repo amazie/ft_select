@@ -6,13 +6,13 @@
 #    By: tcarmet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/16 17:42:06 by tcarmet           #+#    #+#              #
-#    Updated: 2015/03/25 15:24:47 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/03/25 16:53:35 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME 		= ft_select
 
-DEBUG 		= yes
+DEBUG 		= no
 ifeq ($(DEBUG),no)
     FLAGS	= -Wall -Werror -Wextra
 else

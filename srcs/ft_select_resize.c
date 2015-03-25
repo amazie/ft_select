@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/24 14:48:07 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/25 15:16:39 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 17:07:25 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 int		ft_check_size(t_all *all)
 {
-	if (all->nb_row - 2 < all->count_line || all->nb_col < all->count_colomn)
+	if (all->nb_row - 2 < all->count[LINE] || all->nb_col - 2 < all->count[COL])
 	{
 		ft_clear_screen();
 		ft_putendl_fd("Windows size too small.", 2);
@@ -49,12 +49,12 @@ void	ft_count_col(t_all *all)
 {
 	t_lst	*tmp;
 
-	all->count_colomn = all->lst->len;
+	all->count[COL] = all->lst->len;
 	tmp = all->lst->next;
 	while (tmp != all->lst)
 	{
-		if (tmp->len > all->count_colomn)
-			all->count_colomn = tmp->len;
+		if (tmp->len > all->count[COL])
+			all->count[COL] = tmp->len;
 		tmp = tmp->next;
 	}
 }

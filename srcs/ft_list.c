@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/20 15:47:47 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 14:52:36 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 16:33:40 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,5 @@ void	ft_arg_to_list(char **argv, t_all *all)
 		ft_push_list(all, tmp);
 		i++;
 	}
-	all->count_line = i;
+	all->count[LINE] = i;
 }
