@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/22 20:52:41 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/24 16:52:59 by tcoppin          ###   ########.fr       */
+/*   Created: 2015/03/25 20:17:01 by tcoppin           #+#    #+#             */
+/*   Updated: 2015/03/25 20:17:03 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ void	ft_print_enter(t_all *all)
 			ft_putchar(32);
 		i++;
 	}
-	i = 0;
-	if (all->ret_tab[i])
-		ft_putchar('\n');
 }
 
 /*

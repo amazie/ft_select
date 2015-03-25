@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/17 15:42:48 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 16:58:02 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 20:22:30 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,15 @@ typedef enum	e_enum
 
 typedef struct	s_all
 {
-	struct 	termios	term;
-	char	*name_term;
-	int		nb_col;
-	int		nb_row;
-	int		enter;
-	int		count[2];
-	char	**ret_tab;
-	t_lst	*lst;
+	struct termios	term;
+	char			*name_term;
+	int				nb_col;
+	int				nb_row;
+	int				enter;
+	int				count[2];
+	char			**ret_tab;
+	t_lst			*lst;
 }				t_all;
-
 /*
 **	ft_term_change.c
 */

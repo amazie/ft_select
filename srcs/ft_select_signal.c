@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_signal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/23 15:54:53 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/25 17:38:17 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/03/25 20:18:20 by tcoppin           #+#    #+#             */
+/*   Updated: 2015/03/25 20:20:47 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_sig_stop(void)
 {
 	t_all	*all;
 	char	cp[2];
-	
+
 	all = NULL;
 	all = ft_stock(all, 1);
 	cp[0] = all->term.c_cc[VSUSP];
@@ -87,7 +87,7 @@ void		ft_catch_signal(int i)
 }
 
 /*
-**	ft_signal will collect any kind of signal and will give 
+**	ft_signal will collect any kind of signal and will give
 **	the right instruction to ft_catch_signal at any time
 **	during the execution of the program.
 */

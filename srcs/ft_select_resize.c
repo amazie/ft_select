@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_resize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/24 14:48:07 by tcoppin           #+#    #+#             */
-/*   Updated: 2015/03/25 17:39:41 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/03/25 20:17:51 by tcoppin           #+#    #+#             */
+/*   Updated: 2015/03/25 20:19:47 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int		ft_check_size(t_all *all)
 
 void	ft_resize(void)
 {
-	t_all *all;
-	struct winsize win;
+	t_all			*all;
+	struct winsize	win;
 
 	all = NULL;
 	all = ft_stock(all, 1);

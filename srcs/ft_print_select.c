@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_select.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tcoppin <tcoppin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/20 15:18:19 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 17:05:32 by tcarmet          ###   ########.fr       */
+/*   Created: 2015/03/25 20:17:30 by tcoppin           #+#    #+#             */
+/*   Updated: 2015/03/25 20:17:31 by tcoppin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	ft_under_line(char *str)
 {
 	tputs(tgetstr("us", NULL), 1, ft_myputchar);
-	ft_putstr_fd("\033[36m", 2);
+	ft_putstr_fd("\033[32m", 2);
 	ft_putendl_fd(str, 2);
 	ft_putstr_fd("\033[00m", 2);
 	tputs(tgetstr("ue", NULL), 1, ft_myputchar);
@@ -30,7 +30,7 @@ void	ft_under_line(char *str)
 void	ft_print_select(char *str)
 {
 	tputs(tgetstr("so", NULL), 1, ft_myputchar);
-	ft_putstr_fd("\033[36m", 2);
+	ft_putstr_fd("\033[1;32m", 2);
 	ft_putendl_fd(str, 2);
 	ft_putstr_fd("\033[00m", 2);
 	tputs(tgetstr("se", NULL), 1, ft_myputchar);
@@ -44,7 +44,7 @@ void	ft_select_underline(char *str)
 {
 	tputs(tgetstr("us", NULL), 1, ft_myputchar);
 	tputs(tgetstr("so", NULL), 1, ft_myputchar);
-	ft_putstr_fd("\033[36m", 2);
+	ft_putstr_fd("\033[1;36m", 2);
 	ft_putendl_fd(str, 2);
 	ft_putstr_fd("\033[00m", 2);
 	tputs(tgetstr("se", NULL), 1, ft_myputchar);
