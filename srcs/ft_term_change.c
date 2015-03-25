@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 18:12:09 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/03/25 17:23:08 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/03/25 18:25:39 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ int		ft_init_termios(t_all *all)
 	if (tgetent(NULL, getenv("TERM")) < 1)
 		return (0);
 	if (tcgetattr(0, &(all->term)) == -1)
-	{
-		ft_putendl("YOLO_TERM");
 		return (0);
-	}
 	all->term.c_lflag &= ~(ICANON | ECHO);
 	all->term.c_cc[VMIN] = 1;
 	all->term.c_cc[VTIME] = 0;
