@@ -1,12 +1,12 @@
 # ft_select
 
-<img align="right"  src="http://i.imgur.com/hlqkNUG.png" width="45%" />
-This is a project of [Ecole 42](https://42.fr)
+<img align="right"  src="http://i.imgur.com/Vcrznvu.png" width="45%" />
+This is a project of <a href="https://42.fr" target="_blank" >Ecole 42</a>
 
 ft_select was made using the _termcaps_ _library_ 
 
 
-This project was made with : [tcoppin](https://github.com/tcoppin)
+This project was made with : <a href="https://github.com/tcarmet" target="_blank" >tcarmet</a>
 <br /><br /><br /><br /><br /><br /><br /><br />
 ## Usage
 	$>  make
