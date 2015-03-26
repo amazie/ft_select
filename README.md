@@ -14,9 +14,11 @@ This project was made with : <a href="https://github.com/tcarmet" target="_blank
 
 ## Controls
 
-	* <strong>Arrows keys up/down</strong> -> Move up and down
-	* <strong>Space key</strong> -> Selection
-	* <strong>Escape key</strong> -> Exit
-	* <strong>Delete and Backspace key<s/trong> -> Delete an argument
-	* <strong>Home and end keys</strong> -> Move cursor end/begin
-	* <strong>Tab key</strong> -> Select all or Unselect all
+<ul>
+<li><strong>Arrows keys up/down</strong> -> Move up and down</li>
+<li><strong>Space key</strong> -> Selection</li>
+<li><strong>Escape key</strong> -> Exit</li>
+<li><strong>Delete and Backspace key</strong> -> Delete an argument</li>
+<li><strong>Home and end keys</strong> -> Move cursor end/begin</li>
+<li><strong>Tab key</strong> -> Select all or Unselect all</li>
+</ul>
